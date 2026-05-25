@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word to MD - แปลงเอกสาร Word เป็น Markdown</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📄 Word to MD</h1>
+      <p>แปลงเอกสาร Word (.docx, .doc) เป็น Markdown</p>
+    </header>
+
+    <main>
+      <!-- Upload Zone -->
+      <section class="upload-section">
+        <div id="drop-zone" class="drop-zone">
+          <div class="drop-zone-content">
+            <span class="icon">📎</span>
+            <p>ลากไฟล์มาวางที่นี่</p>
+            <p class="sub-text">หรือคลิกเพื่อเลือกไฟล์</p>
+            <input type="file" id="file-input" accept=".docx,.doc" hidden>
+          </div>
+        </div>
+        
+        <div class="supported-formats">
+          <span>รองรับ:</span>
+          <span class="format-tag">.docx</span>
+          <span class="format-tag">.doc</span>
+        </div>
+      </section>
+
+      <!-- Result Section -->
+      <section id="result-section" class="result-section hidden">
+        <div class="file-info">
+          <span id="filename" class="filename"></span>
+          <button id="clear-btn" class="btn btn-outline">🗑️ ล้าง</button>
+        </div>
+
+        <div class="preview-container">
+          <div class="preview-header">
+            <h3>ตัวอย่าง Markdown</h3>
+            <div class="actions">
+              <button id="copy-btn" class="btn btn-primary">📋 คัดลอก</button>
+              <button id="download-btn" class="btn btn-success">⬇️ ดาวน์โหลด</button>
+            </div>
+          </div>
+          <textarea id="markdown-output" class="markdown-output" readonly></textarea>
+        </div>
+      </section>
+
+      <!-- Loading State -->
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>กำลังแปลงไฟล์...</p>
+      </div>
+    </main>
+
+    <footer>
+      <p>Powered by <a href="https://github.com/msaaddev/docx-to-markdown" target="_blank">docx-to-markdown</a> + <a href="https://github.com/microsoft/mammoth" target="_blank">mammoth.js</a></p>
+    </footer>
+  </div>
+
+  <!-- Mammoth.js for DOCX parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/mammoth@1.6.0/mammoth.browser.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
