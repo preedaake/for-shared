@@ -59,6 +59,8 @@ import { convertDocxToMd } from 'word-to-md';
 const markdown = await convertDocxToMd('document.docx');
 ```
 
+<img width="835" height="552" alt="2569-05-25 21_48_51-word-to-md-test docx - Word" src="https://github.com/user-attachments/assets/aef8122d-62ad-46b5-baa8-1eda443b70fd" />
+
 ---
 
 ## 🤝 Contributing
